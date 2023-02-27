@@ -1,0 +1,62 @@
+﻿<Application x:Class="CarDiagnosticsApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CarDiagnosticsApp"
+             xmlns:viewModel="clr-namespace:CarDiagnosticsApp.MVVM.ViewModel"
+             xmlns:view="clr-namespace:CarDiagnosticsApp.MVVM.View">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TextBoxTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TextBoxTheme1.xaml"/>
+                <ResourceDictionary Source="Theme/TextBoxTheme2.xaml"/>
+                <ResourceDictionary Source="Theme/TextBoxTheme3.xaml"/>
+                <ResourceDictionary Source="Theme/TextBoxTheme4.xaml"/>
+                <ResourceDictionary Source="Theme/TextBoxTheme5.xaml"/>
+                <ResourceDictionary Source="Theme/TextBoxTheme6.xaml"/>
+                <ResourceDictionary Source="Theme/TextBoxTheme7.xaml"/>
+                <ResourceDictionary Source="Theme/ComboBoxTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TextBoxTheme9.xaml"/>
+                <ResourceDictionary Source="Theme/TextBoxTheme10.xaml"/>
+                <ResourceDictionary Source="Theme/TextBoxTheme11.xaml"/>
+                <ResourceDictionary Source="Theme/TextBoxTheme12.xaml"/>
+
+
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:HomeView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:DiscoveryViewModel}">
+                <view:DiscoveryView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:FixSectionViewModel}">
+                <view:FixSection/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:CarsViewModel}">
+                <view:CarsView/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:MotorsViewModel}">
+                <view:MotorsView/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:BusesViewModel}">
+                <view:BusesView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:VehicleViewModel}">
+                <view:VehicleView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:FixesViewModel}">
+                <view:Fixes/>
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

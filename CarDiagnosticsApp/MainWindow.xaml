@@ -1,0 +1,131 @@
+﻿<Window x:Class="CarDiagnosticsApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarDiagnosticsApp"
+        xmlns:viewModel="clr-namespace:CarDiagnosticsApp.MVVM.ViewModel" 
+        xmlns:view="clr-namespace:CarDiagnosticsApp.MVVM.View"
+        mc:Ignorable="d"
+        Height="600" Width="1015"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown"
+        Background="Transparent"
+        AllowsTransparency="True">
+    
+    <Border Background="#30415d"
+            CornerRadius="15">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Car Diagnostics App"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Foreground="White"
+                       FontSize="18"
+                       FontFamily="/Fonts/#Poppins"/>
+
+            <StackPanel Grid.Row="1">
+                <RadioButton Content="Add Vehicle"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}"/>
+
+                <RadioButton Content="Your Vehicles"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding ToDescoveryCommand}"/>
+
+                <RadioButton Content="Fix Section"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding FixSectionViewCommand}"/>
+
+                <RadioButton Content="Fixes"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding FixesViewCommand}"/>
+            </StackPanel>
+
+            <Button BorderThickness="0" Content="X" Cursor="Hand" Grid.Column="1" Margin="770,10,10,35" Click="Button_Click_1">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF30335D"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+            <Button BorderThickness="0" Content="_" Cursor="Hand" Grid.Column="1" Margin="735,10,45,35" Opacity="0.995" Click="Button_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF30335D"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10"
+                            Content="{Binding CurrentView}">
+                <ContentControl.Resources>
+                    <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                        <view:HomeView/>
+                    </DataTemplate>
+
+                    <DataTemplate DataType="{x:Type viewModel:DiscoveryViewModel}">
+                        <view:DiscoveryView/>
+                    </DataTemplate>
+
+                    <DataTemplate DataType="{x:Type viewModel:FixSectionViewModel}">
+                        <view:FixSection/>
+                    </DataTemplate>
+                </ContentControl.Resources>
+            </ContentControl>
+        </Grid>
+    </Border>
+</Window>
