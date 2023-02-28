@@ -47,7 +47,10 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
         public RelayCommand OpenCarViewCommand => new RelayCommand(OpenViewCar);
         private void OpenViewCar(object obj)
         {
-            CurrentRefrence.CurrentView = new VehicleViewModel(selectedVehicle, "CarsViewModel", CurrentRefrence);
+            if (selectedVehicle != null)
+            {
+                CurrentRefrence.CurrentView = new VehicleViewModel(selectedVehicle, "CarsViewModel", CurrentRefrence);
+            }
         }
 
         public bool HideLBox

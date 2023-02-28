@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarDiagnosticsApp.MVVM.View;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.SqlClient;
@@ -125,33 +126,35 @@ namespace CarDiagnosticsApp.MVVM.Model
             }
         }
 
-        //public ObservableCollection<olx> DisplayEverything()
-        //{
-        //    olx ind = null;
-        //    ObservableCollection<olx> Display = new ObservableCollection<olx>();
-        //    string query = "SELECT * FROM prodavalniche";
-        //    using (SqlConnection connection = new SqlConnection(conectionstring))
-        //    {
-        //        SqlCommand command = new SqlCommand(query, connection);
-        //        connection.Open();
-        //        using (SqlDataReader reader = command.ExecuteReader())
-        //            while (reader.Read())
-        //            {
-        //                ind = new olx(reader.GetString(reader.GetOrdinal("Name")),
-        //                   reader.GetString(reader.GetOrdinal("Description")),
-        //                   reader.GetDecimal(reader.GetOrdinal("Price")),
-        //                    reader.GetString(reader.GetOrdinal("Type")),
-        //                   reader.GetString(reader.GetOrdinal("PhoneNumber")),
-        //                   reader.GetString(reader.GetOrdinal("City")),
-        //                   reader.GetDecimal(reader.GetOrdinal("Quantity")));
+        public static ObservableCollection<NewFixes> DisplayFixes(int id)
+        {
+            ObservableCollection<NewFixes> fixes = new ObservableCollection<NewFixes>();
+            string queryString = "SELECT fix3.ID ,fix4.TypeOfFixChoise,fix3.SelectedCarID, fix3.DateOfFix, fix3.Mileage, fix3.Price, fix3.MechanicsName, fix3.SerivceNameAddress, fix3.Description \r\nFROM [FixSections-3] as fix3 \r\nINNER JOIN [FixType-4]  as fix4\r\nON  fix3.RepairID = fix4.ID \r\nWHERE fix3.SelectedCarID = @id;";
+            using (SqlConnection connection = new SqlConnection(conectionstring))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                connection.Open();
+                command.Parameters.AddWithValue("id", id);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        fixes.Add(new NewFixes(
+                                       reader.GetString(reader.GetOrdinal("TypeOfFixChoise")),
+                                       reader.GetInt32(reader.GetOrdinal("SelectedCarID")),
+                                       reader.GetString(reader.GetOrdinal("DateOfFix")),
+                                       reader.GetString(reader.GetOrdinal("Mileage")),
+                                       reader.GetString(reader.GetOrdinal("Price")),
+                                       reader.GetString(reader.GetOrdinal("MechanicsName")),
+                                       reader.GetString(reader.GetOrdinal("SerivceNameAddress")),
+                                       reader.GetString(reader.GetOrdinal("Description"))));
 
-        //                Display.Add(ind);
-        //            }
-        //        connection.Close();
-        //        return Display;
-        //    }
-
-        //}
+                    }
+                }
+                connection.Close();
+            }
+            return fixes;
+        }
         public static ObservableCollection<Type> GetTypes()
         {
             ObservableCollection<Type> types = new ObservableCollection<Type>();

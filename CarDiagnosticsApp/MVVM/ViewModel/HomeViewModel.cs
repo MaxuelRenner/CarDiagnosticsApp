@@ -22,6 +22,7 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
 
         private ObservableCollection<Type> types;
         private RelayCommand addVehicleCommand;
+        private ICommand clearCommand;
         private Type selectedType;
         private Referencer CurrentRefrence;
 
@@ -134,6 +135,28 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
                 this.addVehicleCommand = new RelayCommand(Add);
                 return this.addVehicleCommand; 
             }
+        }
+
+        public ICommand ClearCommand
+        {
+            get
+            {
+                if (this.clearCommand == null)
+                {
+                    this.clearCommand = new RelayCommand(Cleaner);
+                }
+                return this.clearCommand;
+            }
+        }
+
+        private void Cleaner(object obj)
+        {
+            this.Brand = null;
+            this.Model = null;
+            this.Generation = null;
+            this.Fuel = null;
+            this.Mileage = null;
+            this.Plate = null;
         }
 
         private void Add(object obj)

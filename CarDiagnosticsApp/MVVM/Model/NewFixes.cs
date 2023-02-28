@@ -8,9 +8,8 @@ namespace CarDiagnosticsApp.MVVM.Model
 {
     public class NewFixes
     {
-
-        public int id { get; set; }
         public int repairid { get; set; }
+        public string repairname { get; set; }
         public int selectedcarid { get; set; }
         public string data { get; set; }
         public string mileage { get; set; }
@@ -19,6 +18,18 @@ namespace CarDiagnosticsApp.MVVM.Model
         public string serivcenameaddress { get; set; }
         public string description { get; set; }
 
+        public NewFixes( string repairname, int selectedcarid, string data, string mileage, string price, string mechanicsname, string serivcenameaddress, string description)
+        {
+            this.repairname = repairname;
+            this.selectedcarid = selectedcarid;
+            this.data = data;
+            this.mileage = mileage;
+            this.price = price;
+            this.mechanicsname = mechanicsname;
+            this.serivcenameaddress = serivcenameaddress;
+            this.description = description;
+        }
+        
         public NewFixes(int repairid, int selectedcarid, string data, string mileage, string price, string mechanicsname, string serivcenameaddress, string description)
         {
             this.repairid = repairid;

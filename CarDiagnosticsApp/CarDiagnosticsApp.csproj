@@ -167,43 +167,43 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Theme\TextBoxTheme2.xaml">
+    <Page Include="Theme\BrandTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Theme\TextBoxTheme3.xaml">
+    <Page Include="Theme\ModelTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Theme\TextBoxTheme4.xaml">
+    <Page Include="Theme\GenerationTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Theme\TextBoxTheme5.xaml">
+    <Page Include="Theme\FuleTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Theme\TextBoxTheme6.xaml">
+    <Page Include="Theme\MileageTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Theme\TextBoxTheme7.xaml">
+    <Page Include="Theme\LicenseTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Theme\TextBoxTheme9.xaml">
+    <Page Include="Theme\DateTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Theme\TextBoxTheme10.xaml">
+    <Page Include="Theme\PriceTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Theme\TextBoxTheme11.xaml">
+    <Page Include="Theme\NameTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Theme\TextBoxTheme12.xaml">
+    <Page Include="Theme\ServiceTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -211,11 +211,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Theme\TextBoxTheme1.xaml">
+    <Page Include="Theme\TypeTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Theme\TextBoxTheme.xaml">
+    <Page Include="Theme\DesctiptionTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

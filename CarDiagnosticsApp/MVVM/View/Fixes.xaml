@@ -10,20 +10,81 @@
              Background="#29193d">
 
     <Grid>
-        <TextBlock Text="Choose a car to see all fixes!"
+        <TextBlock Text="Choose a vehicle to see all fixes!"
                        Foreground="White"
                        FontSize="20"
-                       Margin="10,0,531,415"/>
-
-
+                       Margin="10,0,500,415"/>
+        
         <ComboBox
-                              Margin="5,30,515,432"
-                              BorderBrush="Transparent"
-                              FontSize="20"
-                              ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                              Foreground="Black"
-                              ItemsSource="{Binding Vehicles}"
-                              SelectedItem="{Binding SelectedVehicle, UpdateSourceTrigger=PropertyChanged}"
-                              DisplayMemberPath="brand"/>
+            Margin="5,30,515,432"
+            BorderBrush="Transparent"
+            FontSize="20"
+            ScrollViewer.HorizontalScrollBarVisibility="Auto"
+            Foreground="Black"
+            ItemsSource="{Binding Vehicles}"
+            SelectedItem="{Binding SelectedVehicle, UpdateSourceTrigger=PropertyChanged}"
+            DisplayMemberPath="brand"/>
+
+        <ListView Margin="5,75,5,5" Background="#8b8c9e" 
+                  BorderBrush="Transparent" 
+                  ItemsSource="{Binding FixesInfo}" 
+                  BorderThickness="0,0,0,0" Foreground="Black">
+
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="False">
+                            <Setter Property="Content" Value="False"/>
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="BorderBrush" Value="Transparent" />
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Content" Value="False"/>
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="BorderBrush" Value="Transparent" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
+            
+            <ListView.View>
+                <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="GridViewColumnHeader">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                    <GridViewColumn Header="Type of repair"
+                                    DisplayMemberBinding="{Binding repairname}"
+                                    Width="auto"/>
+
+                    <GridViewColumn Header="Date of fix"
+                                    DisplayMemberBinding="{Binding data}"
+                                    Width="auto"/>
+
+                    <GridViewColumn Header="Mileage"
+                                    DisplayMemberBinding="{Binding mileage}"
+                                    Width="auto"/>
+
+                    <GridViewColumn Header="Price"
+                                    DisplayMemberBinding="{Binding price}"
+                                    Width="auto"/>
+
+                    <GridViewColumn Header="Mechanic's Name"
+                                    DisplayMemberBinding="{Binding mechanicsname}"
+                                    Width="auto"/>
+
+                    <GridViewColumn Header="Serivce Name and Address"
+                                    DisplayMemberBinding="{Binding serivcenameaddress}"
+                                    Width="auto"/>
+
+                    <GridViewColumn Header="Discription"
+                                    DisplayMemberBinding="{Binding description}"
+                                    Width="auto"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </UserControl>

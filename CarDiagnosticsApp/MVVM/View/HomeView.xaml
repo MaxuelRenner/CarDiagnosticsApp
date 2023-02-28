@@ -128,7 +128,10 @@
                 </Button.Template>
             </Button>
             
-            <Button BorderThickness="0" Content="Clear" Cursor="Hand" Margin="130,50,500,0" Width="250" Height="60">
+            <Button BorderThickness="0" Content="Clear" Cursor="Hand"
+                    Margin="130,50,500,0" 
+                    Width="250" Height="60"
+                    Command="{Binding ClearCommand}">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="Background" Value="Gray"/>

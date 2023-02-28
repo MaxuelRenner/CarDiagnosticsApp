@@ -102,7 +102,8 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
                 {
                     this.vehicles = new ObservableCollection<Vehicle>();
                     vehicles = DB_Connection.GetVehicles();
-                    return vehicles;
+                    SelectedVehicle = vehicles.FirstOrDefault();
+                return vehicles;
                 }
             }
         
@@ -112,14 +113,15 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
                 {
                     this.typesF = new ObservableCollection<FixTypes>();
                     typesF = DB_Connection.GetAllFixTypes();
-                    return typesF;
+                    SelectedType = typesF.FirstOrDefault();
+                return typesF;
                 }
             }
             public Vehicle SelectedVehicle
             {
                 get
                 {
-                    return selectedVehicle = vehicles.FirstOrDefault();
+                return selectedVehicle;
                 }
                 set
                 {
@@ -133,7 +135,7 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
             {
                 get
                 {
-                    return selectedType = typesF.FirstOrDefault();
+                return selectedType;
                 }
                 set
                 {
