@@ -5,8 +5,6 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
 {
     public class VehicleViewModel : BaseViewModel
     {
-        private Vehicle selectedVehicle;
-
         private string brand;
         private string model;
         private string fuel;
@@ -14,6 +12,7 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
         private string generation;
         private string plate;
         private string lastWindowName;
+        private Vehicle selectedVehicle;
         public Referencer CurrentRefrence { get; set; }
 
         public string Brand
