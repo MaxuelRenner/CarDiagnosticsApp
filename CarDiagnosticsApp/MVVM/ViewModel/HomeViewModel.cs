@@ -3,6 +3,7 @@ using CarDiagnosticsApp.MVVM.Model;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
 namespace CarDiagnosticsApp.MVVM.ViewModel
@@ -15,6 +16,7 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
         private string fuel;
         private string mileage;
         private string plate;
+        public Vehicle selected;
 
         private ObservableCollection<Types> types;
         private RelayCommand addVehicleCommand;
@@ -116,17 +118,27 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
             }
             set
             {
-
                 selectedType = value;
                 this.OnPropertyChanged(nameof(SelectedType));
+            }
+        }
+        private Vehicle Selected
+        {
+            get
+            {
+                return this.selected;
+            }
+            set
+            {
+                this.selected = value;
+                OnPropertyChanged(nameof(this.Selected));
             }
         }
         public RelayCommand AddVehicleCommand
         {
             get
             {
-
-                this.addVehicleCommand = new RelayCommand(Add);
+                this.addVehicleCommand = new RelayCommand(Add, CanAdd);
                 return this.addVehicleCommand;
             }
         }
@@ -150,7 +162,14 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
             this.Mileage = null;
             this.Plate = null;
         }
-
+        public bool CanAdd(object args)
+        {
+            if (Selected == null)
+            {
+                return false;
+            }
+            return true;
+        }
         private void Add(object obj)
         {
             if (!String.IsNullOrEmpty(Brand) && !String.IsNullOrEmpty(Model) && !String.IsNullOrEmpty(Generation) && !String.IsNullOrEmpty(Fuel) && !String.IsNullOrEmpty(Mileage) && !String.IsNullOrEmpty(Plate))
