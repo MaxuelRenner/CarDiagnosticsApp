@@ -13,7 +13,10 @@ namespace CarDiagnosticsApp.Core
         public event Action OnCurrentViewChanged;
         public BaseViewModel CurrentView
         {
-            get { return _currentView; }
+            get 
+            { 
+                return _currentView; 
+            }
             set
             {
                 _currentView = value;
