@@ -42,7 +42,6 @@ namespace CarDiagnosticsApp.MVVM.Model
             }
             return vehicles;
         }
-
         public static ObservableCollection<FixTypes> GetAllFixTypes()
         {
             ObservableCollection<FixTypes> fixTypes = new ObservableCollection<FixTypes>();
@@ -64,7 +63,6 @@ namespace CarDiagnosticsApp.MVVM.Model
             }
             return fixTypes;
         }
-
         public static void Insert(Vehicle vehicle)
         {
             using (SqlConnection connection = new SqlConnection(conectionstring))
@@ -83,7 +81,6 @@ namespace CarDiagnosticsApp.MVVM.Model
                 connection.Close();
             }
         }
-
         public static void Update(Vehicle vehicle)
         {
             using (SqlConnection connection = new SqlConnection(conectionstring))
@@ -105,7 +102,6 @@ namespace CarDiagnosticsApp.MVVM.Model
                 }
             }
         }
-
         public static void AddFix(NewFixes newFixes)
         {
             using (SqlConnection connection = new SqlConnection(conectionstring))
@@ -125,7 +121,6 @@ namespace CarDiagnosticsApp.MVVM.Model
                 connection.Close();
             }
         }
-
         public static ObservableCollection<NewFixes> DisplayFixes(int id)
         {
             ObservableCollection<NewFixes> fixes = new ObservableCollection<NewFixes>();
@@ -140,15 +135,14 @@ namespace CarDiagnosticsApp.MVVM.Model
                     while (reader.Read())
                     {
                         fixes.Add(new NewFixes(
-                                       reader.GetString(reader.GetOrdinal("TypeOfFixChoise")),
-                                       reader.GetInt32(reader.GetOrdinal("SelectedCarID")),
-                                       reader.GetString(reader.GetOrdinal("DateOfFix")),
-                                       reader.GetString(reader.GetOrdinal("Mileage")),
-                                       reader.GetString(reader.GetOrdinal("Price")),
-                                       reader.GetString(reader.GetOrdinal("MechanicsName")),
-                                       reader.GetString(reader.GetOrdinal("SerivceNameAddress")),
-                                       reader.GetString(reader.GetOrdinal("Description"))));
-
+                            reader.GetString(reader.GetOrdinal("TypeOfFixChoise")),
+                            reader.GetInt32(reader.GetOrdinal("SelectedCarID")),
+                            reader.GetString(reader.GetOrdinal("DateOfFix")),
+                            reader.GetString(reader.GetOrdinal("Mileage")),
+                            reader.GetString(reader.GetOrdinal("Price")),
+                            reader.GetString(reader.GetOrdinal("MechanicsName")),
+                            reader.GetString(reader.GetOrdinal("SerivceNameAddress")),
+                            reader.GetString(reader.GetOrdinal("Description"))));
                     }
                 }
                 connection.Close();
@@ -168,14 +162,13 @@ namespace CarDiagnosticsApp.MVVM.Model
                     while (reader.Read())
                     {
                         types.Add(new Types(reader.GetInt32(reader.GetOrdinal("ID")),
-                            reader.GetString(reader.GetOrdinal("Type"))));
+                        reader.GetString(reader.GetOrdinal("Type"))));
                     }
                 }
                 connection.Close();
             }
             return types;
         }
-
         public static ObservableCollection<Vehicle> GetCarsOnly()
         {
             ObservableCollection<Vehicle> cars = new ObservableCollection<Vehicle>();
@@ -202,7 +195,6 @@ namespace CarDiagnosticsApp.MVVM.Model
             }
             return cars;
         }
-
         public static ObservableCollection<Vehicle> GetMotorsOnly()
         {
             ObservableCollection<Vehicle> motors = new ObservableCollection<Vehicle>();
@@ -229,7 +221,6 @@ namespace CarDiagnosticsApp.MVVM.Model
             }
             return motors;
         }
-
         public static ObservableCollection<Vehicle> GetBusesOnly()
         {
             ObservableCollection<Vehicle> buses = new ObservableCollection<Vehicle>();
@@ -256,7 +247,6 @@ namespace CarDiagnosticsApp.MVVM.Model
             }
             return buses;
         }
-
         public static ObservableCollection<Vehicle> GetVehicles()
         {
             ObservableCollection<Vehicle> vehicles = new ObservableCollection<Vehicle>();
@@ -284,7 +274,6 @@ namespace CarDiagnosticsApp.MVVM.Model
             }
             return vehicles;
         }
-
         public static void DeleteVehicle(string brand)
         {
             using (SqlConnection connection = new SqlConnection(conectionstring))
@@ -298,6 +287,5 @@ namespace CarDiagnosticsApp.MVVM.Model
                 }
             }
         }
-
     }
 }
