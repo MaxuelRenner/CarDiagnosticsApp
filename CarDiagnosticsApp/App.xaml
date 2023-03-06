@@ -12,34 +12,6 @@
                 <ResourceDictionary Source="Theme/ComboBoxTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
-            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
-                <view:HomeView/>
-            </DataTemplate>
-
-            <DataTemplate DataType="{x:Type viewModel:DiscoveryViewModel}">
-                <view:DiscoveryView/>
-            </DataTemplate>
-
-            <DataTemplate DataType="{x:Type viewModel:FixSectionViewModel}">
-                <view:FixSection/>
-            </DataTemplate>
-
-            <DataTemplate DataType="{x:Type viewModel:CarsViewModel}">
-                <view:CarsView/>
-            </DataTemplate>
-            
-            <DataTemplate DataType="{x:Type viewModel:MotorsViewModel}">
-                <view:MotorsView/>
-            </DataTemplate>
-            
-            <DataTemplate DataType="{x:Type viewModel:BusesViewModel}">
-                <view:BusesView/>
-            </DataTemplate>
-
-            <DataTemplate DataType="{x:Type viewModel:VehicleViewModel}">
-                <view:VehicleView/>
-            </DataTemplate>
-
             <DataTemplate DataType="{x:Type viewModel:FixesViewModel}">
                 <view:Fixes/>
             </DataTemplate>
