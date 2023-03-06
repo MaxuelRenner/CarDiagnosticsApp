@@ -7,12 +7,15 @@
              xmlns:viewModel="clr-namespace:CarDiagnosticsApp.MVVM.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-
+    
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </UserControl.Resources>
     <StackPanel Background="#29193d">
 
         <StackPanel Orientation="Horizontal"
                     Margin="0,0,0,10"/>
-
+      
         <StackPanel>
             <StackPanel.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -40,44 +43,49 @@
                       ItemsSource="{Binding Types}"
                       DisplayMemberPath="TypeV"
                       SelectedItem="{Binding SelectedType,UpdateSourceTrigger=PropertyChanged}">
-                
+
             </ComboBox>
-
-            <TextBox x:Name="Brand" Width="210"
+            
+                <TextBox x:Name="Brand" Width="210"
                      Height="40"
                      Margin="5,5,5,10"
                      HorizontalAlignment="Center"
                      Grid.Column="1"
-                     Style="{StaticResource BrandTextBox}"
+                     Text="{Binding Brand, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                     Style="{StaticResource CustomTextBoxWatermark}"
                      FontSize="20"
                      />
 
-            <TextBox x:Name="Model" Width="205"
+                    <TextBox x:Name="Model" Width="205"
                      Height="40"
                      Margin="5,5,5,10"
                      HorizontalAlignment="Center"
                      Grid.Column="1"
-                     Style="{StaticResource ModelTextBox}"
+                     Style="{StaticResource CustomTextBoxWatermark}"
                      FontSize="20"
+                     Text="{Binding Model, UpdateSourceTrigger=PropertyChanged}"
                      />
+                
         </StackPanel>
         <TextBox x:Name="Generation" Width="785"
                      Height="40"
                      HorizontalAlignment="Left"
                      Margin="5,5,5,10"
                      Grid.Column="1"
-                     Style="{StaticResource GenerationTextBox}"
+                     Style="{StaticResource CustomTextBoxWatermark}"
                      FontSize="20"
+                     Text="{Binding Generation, UpdateSourceTrigger=PropertyChanged}"
                      />
 
         <StackPanel Orientation="Horizontal">
 
-            <TextBox x:Name="Fule" Width="387"
+            <TextBox x:Name="Fuel" Width="387"
                      Height="40"
                      Margin="5,5,5,10"
                      Grid.Column="1"
-                     Style="{StaticResource FuleTextBox}"
+                     Style="{StaticResource CustomTextBoxWatermark}"
                      FontSize="20"
+                     Text="{Binding Fuel, UpdateSourceTrigger=PropertyChanged}"
                      />
 
             <TextBox x:Name="Mileage" Width="387"
@@ -85,20 +93,21 @@
                      Margin="5,5,5,10"
                      HorizontalAlignment="Center"
                      Grid.Column="1"
-                     Style="{StaticResource MileageTextBox}"
+                     Style="{StaticResource CustomTextBoxWatermark}"
                      FontSize="20"
+                     Text="{Binding Mileage, UpdateSourceTrigger=PropertyChanged}"
                      />
 
         </StackPanel>
 
-        <TextBox x:Name="LicensePlate" Width="783"
+        <TextBox x:Name="Plate" Width="783"
                      Height="40"
                      Margin="5,5,5,10"
                      HorizontalAlignment="Left"
                      Grid.Column="1"
-                     
-                     Style="{StaticResource LicenseTextBox}"
+                     Style="{StaticResource CustomTextBoxWatermark}"
                      FontSize="20"
+                     Text="{Binding Plate, UpdateSourceTrigger=PropertyChanged}"
                      />
 
         <StackPanel Orientation="Horizontal">
@@ -127,7 +136,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            
+
             <Button BorderThickness="0" Content="Clear" Cursor="Hand"
                     Margin="130,50,500,0" 
                     Width="250" Height="60"

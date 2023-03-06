@@ -8,21 +8,8 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
-                <ResourceDictionary Source="Theme/DesctiptionTheme.xaml"/>
-                <ResourceDictionary Source="Theme/TypeTheme.xaml"/>
-                <ResourceDictionary Source="Theme/BrandTheme.xaml"/>
-                <ResourceDictionary Source="Theme/ModelTheme.xaml"/>
-                <ResourceDictionary Source="Theme/GenerationTheme.xaml"/>
-                <ResourceDictionary Source="Theme/FuleTheme.xaml"/>
-                <ResourceDictionary Source="Theme/MileageTheme.xaml"/>
-                <ResourceDictionary Source="Theme/LicenseTheme.xaml"/>
+                <ResourceDictionary Source="Theme/CustomTextBoxWatermark.xaml"/>
                 <ResourceDictionary Source="Theme/ComboBoxTheme.xaml"/>
-                <ResourceDictionary Source="Theme/DateTheme.xaml"/>
-                <ResourceDictionary Source="Theme/PriceTheme.xaml"/>
-                <ResourceDictionary Source="Theme/NameTheme.xaml"/>
-                <ResourceDictionary Source="Theme/ServiceTheme.xaml"/>
-
-
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">

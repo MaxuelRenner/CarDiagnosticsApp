@@ -59,28 +59,31 @@
 
         <StackPanel Orientation="Horizontal">
 
-            <TextBox x:Name="date_of_fix" Width="287"
+            <TextBox x:Name="ddmmyyyy" Width="287"
                      Height="40"
                      Margin="5,5,5,10"
                      Grid.Column="1"
-                     Style="{StaticResource DateTextBox}" 
-                     FontSize="20"/>
+                     Style="{StaticResource CustomTextBoxWatermark}" 
+                     FontSize="20"
+                     Text="{Binding Data, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <TextBox x:Name="mileage" Width="287"
+            <TextBox x:Name="Mileage" Width="287"
                      Height="40"
                      Margin="5,5,5,10"
                      HorizontalAlignment="Center"
                      Grid.Column="1"
-                     Style="{StaticResource MileageTextBox}"
-                     FontSize="20"/>
+                     Style="{StaticResource CustomTextBoxWatermark}"
+                     FontSize="20"
+                     Text="{Binding Mileage, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <TextBox x:Name="price" Width="190"
+            <TextBox x:Name="Price" Width="190"
                      Height="40"
                      Margin="5,5,5,10"
                      HorizontalAlignment="Center"
                      Grid.Column="1"
-                     Style="{StaticResource PriceTextBox}"
-                     FontSize="20"/>
+                     Style="{StaticResource CustomTextBoxWatermark}"
+                     FontSize="20"
+                     Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}"/>
 
         </StackPanel>
 
@@ -90,16 +93,18 @@
                      Height="40"
                      Margin="5,5,5,10"
                      Grid.Column="1"
-                     Style="{StaticResource NameTextBox}"
-                     FontSize="20"/>
+                     Style="{StaticResource CustomTextBoxWatermark}"
+                     FontSize="20"
+                     Text="{Binding Machenicsname, UpdateSourceTrigger=PropertyChanged}"/>
 
             <TextBox x:Name="service_name_N_address" Width="487"
                      Height="40"
                      Margin="5,5,5,10"
                      HorizontalAlignment="Center"
                      Grid.Column="1"
-                     Style="{StaticResource ServiceTextBox}"
-                     FontSize="20"/>
+                     Style="{StaticResource CustomTextBoxWatermark}"
+                     FontSize="20"
+                     Text="{Binding Service, UpdateSourceTrigger=PropertyChanged}"/>
 
         </StackPanel>
 

@@ -89,7 +89,7 @@
     <Compile Include="MVVM\Model\DB_Connection.cs" />
     <Compile Include="MVVM\Model\FixTypes.cs" />
     <Compile Include="MVVM\Model\NewFixes.cs" />
-    <Compile Include="MVVM\Model\Type.cs" />
+    <Compile Include="MVVM\Model\Types.cs" />
     <Compile Include="MVVM\Model\Vehicle.cs" />
     <Compile Include="MVVM\ViewModel\BusesViewModel.cs" />
     <Compile Include="MVVM\ViewModel\CarsViewModel.cs" />
@@ -167,7 +167,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Theme\BrandTheme.xaml">
+    <Page Include="Theme\CustomTextBoxWatermark.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

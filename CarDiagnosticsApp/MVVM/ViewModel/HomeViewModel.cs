@@ -1,12 +1,8 @@
 ﻿using CarDiagnosticsApp.Core;
 using CarDiagnosticsApp.MVVM.Model;
-using System.Collections.Generic;
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows;
 using System.Windows.Input;
 
 namespace CarDiagnosticsApp.MVVM.ViewModel
@@ -20,26 +16,26 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
         private string mileage;
         private string plate;
 
-        private ObservableCollection<Type> types;
+        private ObservableCollection<Types> types;
         private RelayCommand addVehicleCommand;
         private ICommand clearCommand;
-        private Type selectedType;
+        private Types selectedType;
         private Referencer CurrentRefrence;
 
         public HomeViewModel(Referencer referencer)
         {
-            this.CurrentRefrence = referencer;           
+            this.CurrentRefrence = referencer;
         }
 
         public string Brand
         {
-            get 
+            get
             {
-                return brand; 
+                return brand;
             }
-            set 
-            { 
-                this.brand = value; 
+            set
+            {
+                this.brand = value;
                 this.OnPropertyChanged(nameof(this.Brand));
             }
         }
@@ -103,17 +99,17 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
                 this.OnPropertyChanged(nameof(this.Plate));
             }
         }
-        public ObservableCollection<Type> Types
+        public ObservableCollection<Types> Types
         {
             get
             {
-                this.types = new ObservableCollection<Type>();
+                this.types = new ObservableCollection<Types>();
                 types = DB_Connection.GetTypes();
                 SelectedType = types.FirstOrDefault();
                 return types;
             }
         }
-        public Type SelectedType
+        public Types SelectedType
         {
             get
             {
@@ -133,7 +129,7 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
             {
 
                 this.addVehicleCommand = new RelayCommand(Add);
-                return this.addVehicleCommand; 
+                return this.addVehicleCommand;
             }
         }
 
@@ -161,14 +157,18 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
 
         private void Add(object obj)
         {
-            
-            DB_Connection.Insert(new Vehicle(this.selectedType.ID,this.brand,this.model,this.generation,this.fuel,this.mileage,this.plate));
-            this.Brand = null;
-            this.Model = null;
-            this.Generation = null;
-            this.Fuel = null;
-            this.Mileage = null;
-            this.Plate = null;
+
+            if (!String.IsNullOrEmpty(Brand) && !String.IsNullOrEmpty(Model) && !String.IsNullOrEmpty(Generation) && !String.IsNullOrEmpty(Fuel) && !String.IsNullOrEmpty(Mileage) && !String.IsNullOrEmpty(Plate))
+            {
+                DB_Connection.Insert(new Vehicle(this.selectedType.ID, this.brand, this.model, this.generation, this.fuel, this.mileage, this.plate));
+                this.Brand = null;
+                this.Model = null;
+                this.Generation = null;
+                this.Fuel = null;
+                this.Mileage = null;
+                this.Plate = null;
+            }
+
         }
     }
 }

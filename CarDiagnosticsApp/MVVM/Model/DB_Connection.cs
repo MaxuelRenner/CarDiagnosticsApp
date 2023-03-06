@@ -155,9 +155,9 @@ namespace CarDiagnosticsApp.MVVM.Model
             }
             return fixes;
         }
-        public static ObservableCollection<Type> GetTypes()
+        public static ObservableCollection<Types> GetTypes()
         {
-            ObservableCollection<Type> types = new ObservableCollection<Type>();
+            ObservableCollection<Types> types = new ObservableCollection<Types>();
             string queryString = "SELECT * FROM [VehicleType-2]";
             using (SqlConnection connection = new SqlConnection(conectionstring))
             {
@@ -167,7 +167,7 @@ namespace CarDiagnosticsApp.MVVM.Model
                 {
                     while (reader.Read())
                     {
-                        types.Add(new Type(reader.GetInt32(reader.GetOrdinal("ID")),
+                        types.Add(new Types(reader.GetInt32(reader.GetOrdinal("ID")),
                             reader.GetString(reader.GetOrdinal("Type"))));
                     }
                 }
