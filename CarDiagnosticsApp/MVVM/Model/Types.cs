@@ -10,8 +10,6 @@ namespace CarDiagnosticsApp.MVVM.Model
     {
         public int ID { get; set; }
         public string TypeV { get; set; }
-
-
         public Types(int ID, string typeV)
         {
             this.ID = ID;
