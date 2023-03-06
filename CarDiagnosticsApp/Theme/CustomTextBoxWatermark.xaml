@@ -5,28 +5,27 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border CornerRadius="10"
-                                Width="{TemplateBinding Width}"
-                              Background="#8b8c9e"
-                                Height="{TemplateBinding Height}">
+                    <Border CornerRadius="10" Width="{TemplateBinding Width}"
+                            Background="#8b8c9e" Height="{TemplateBinding Height}">
                         <Grid>
-                            <TextBox 
-                                    x:Name="SearchTermTextBox"
-                                    Margin="1"
-                                    Text="{Binding RelativeSource={RelativeSource TemplatedParent},Path=Text, Mode=TwoWay}"
-                                         VerticalAlignment="Center"
-                                         BorderThickness="0"
-                                        Background="Transparent"
-                                         Foreground="Black"/>
-                            <TextBlock IsHitTestVisible="False" Text="{TemplateBinding Name}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0">
+                            <TextBox x:Name="TempTextBox"
+                                     Margin="1"
+                                     Text="{Binding RelativeSource={RelativeSource TemplatedParent},Path=Text, Mode=TwoWay}"
+                                     VerticalAlignment="Center"
+                                     BorderThickness="0"
+                                     Background="Transparent"
+                                     Foreground="Black"/>
+                            
+                            <TextBlock IsHitTestVisible="False" Text="{TemplateBinding Name}" VerticalAlignment="Center" 
+                                       HorizontalAlignment="Left" Margin="3,0,0,0" FontSize="15" Foreground="DarkSlateGray">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
                                         <Setter Property="Visibility" Value="Collapsed"/>
                                         <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Text, ElementName=SearchTermTextBox}" Value="">
+                                            <DataTrigger Binding="{Binding Text, ElementName=TempTextBox}" Value="">
                                                 <Setter Property="Visibility" Value="Visible"/>
                                             </DataTrigger>
-                                            <DataTrigger Binding="{Binding Text, ElementName=SearchTermTextBox}" Value="">
+                                            <DataTrigger Binding="{Binding Text, ElementName=TempTextBox}" Value="">
                                                 <Setter Property="Visibility" Value="Visible"/>
                                             </DataTrigger>
                                         </Style.Triggers>
