@@ -1,10 +1,5 @@
 ﻿using CarDiagnosticsApp.Core;
 using CarDiagnosticsApp.MVVM.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarDiagnosticsApp.MVVM.ViewModel
 {
@@ -13,9 +8,13 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
         private Vehicle selectedVehicle;
 
         private string brand;
-        public Referencer CurrentRefrence { get; set; }
-
+        private string model;
+        private string fuel;
+        private string mileage;
+        private string generation;
+        private string plate;
         private string lastWindowName;
+        public Referencer CurrentRefrence { get; set; }
 
         public string Brand
         {
@@ -25,9 +24,6 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
                 OnPropertyChanged(nameof(Brand));
             }
         }
-
-        private string model;
-
         public string Model
         {
             get { return model; }
@@ -36,9 +32,6 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
                 OnPropertyChanged(nameof(Model));
             }
         }
-
-        private string fuel;
-
         public string Fuel
         {
             get { return fuel; }
@@ -47,9 +40,6 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
                 OnPropertyChanged(nameof(Fuel));
             }
         }
-
-        private string mileage;
-
         public string Mileage
         {
             get { return mileage; }
@@ -58,9 +48,6 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
                 OnPropertyChanged(nameof(Mileage));
             }
         }
-
-        private string generation;
-
         public string Generation
         {
             get { return generation; }
@@ -70,9 +57,6 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
 
             }
         }
-
-        private string plate;
-
         public string Plate
         {
             get { return plate; }
@@ -91,22 +75,18 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
                 OnPropertyChanged(nameof(SelectedVehicle));
             }
         }
-
         public RelayCommand DeleteVehicleCommand => new RelayCommand(DeleteVehicle);
         public RelayCommand UpdateVehicleInfoCommand => new RelayCommand(UpdateInfo);
-
         private void UpdateInfo(object obj)
         {
             DB_Connection.Update(new Vehicle(this.selectedVehicle.id ,this.selectedVehicle.typeid, brand, model, generation, fuel, mileage, plate));
             ToBack();
         }
-
         private void DeleteVehicle(object obj)
         {
             DB_Connection.DeleteVehicle(SelectedVehicle.brand);
             ToBack();
         }
-
         private void ToBack()
         {
             switch (lastWindowName)
@@ -124,10 +104,8 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
                     break;
             }
         }
-
         public VehicleViewModel(Vehicle selectedVehicle, string LastWindowName, Referencer referencer)
         {
-            
             this.CurrentRefrence = referencer;
             lastWindowName = LastWindowName;
             SelectedVehicle = selectedVehicle;

@@ -17,10 +17,8 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
         private Vehicle selectedVehicle;
         private void GetFixes()
         {
-
             FixesInfo = DB_Connection.DisplayFixes(SelectedVehicle.id);
         }
-
         public ObservableCollection<Vehicle> Vehicles
         {
             get
@@ -30,21 +28,18 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
                 return vehicles;
             }
         }
-
         public ObservableCollection<NewFixes> FixesInfo
         {
             get
             {
                 return fixesinfo;
             }
-
             set
             {
                 fixesinfo = value;
                 OnPropertyChanged(nameof(FixesInfo));
             }
         }
-
         public Vehicle SelectedVehicle
         {
             get
@@ -53,7 +48,6 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
             }
             set
             {
-
                 selectedVehicle = value;
                 GetFixes();
                 this.OnPropertyChanged(nameof(SelectedVehicle));

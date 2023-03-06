@@ -10,7 +10,7 @@
             </Grid.ColumnDefinitions>
             <Border x:Name="Border" Grid.ColumnSpan="2" CornerRadius="10"
                     Background="#FFBEBEBE"
-                    BorderThickness="1" />
+                    BorderThickness="1"/>
 
             <Border Grid.Column="0"
                     CornerRadius="10" 
@@ -18,7 +18,7 @@
                     Background="{StaticResource WindowBackgroundBrush}" 
                     BorderThickness="1" />
             <Path x:Name="Arrow"
-                  Grid.Column="1"     
+                  Grid.Column="1"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center"
                   Data="M 0 0 L 4 4 L 8 0 Z"/>
@@ -50,7 +50,7 @@
                                           ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"/>
                         <TextBox x:Name="PART_EditableTextBox" Style="{x:Null}" Template="{StaticResource ComboBoxTextBox}" 
                                  HorizontalAlignment="Left" 
-                                 VerticalAlignment="Center" 
+                                 VerticalAlignment="Center"
                                  Margin="3,3,23,3"
                                  Focusable="True" 
                                  Background="Transparent"

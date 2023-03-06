@@ -9,7 +9,6 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <StackPanel Background="#29193d">
-
         <StackPanel Orientation="Horizontal"
                     Margin="0,0,0,10"/>
 
@@ -24,67 +23,55 @@
                        FontSize="20"
                        HorizontalAlignment="Left"
                        Margin="10,0,0,10"/>
-            <StackPanel Orientation="Horizontal"/>
-
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-
             <ComboBox Width="390" Height="42"
-                              Margin="5,5,5,10"
-                              HorizontalAlignment="Center"
-                              Grid.Column="1"
-                              BorderBrush="Transparent"
-                              FontSize="20"
-                              ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                              Foreground="Black"
-                              ItemsSource="{Binding Vehicles}"
-                              SelectedItem="{Binding SelectedVehicle, UpdateSourceTrigger=PropertyChanged}"
-                              DisplayMemberPath="brand"/>
-
+                      Margin="5,5,5,10"
+                      FontSize="20"
+                      HorizontalAlignment="Center"
+                      Grid.Column="1"
+                      BorderBrush="Transparent"
+                      ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                      Foreground="Black"
+                      ItemsSource="{Binding Vehicles}"
+                      SelectedItem="{Binding SelectedVehicle, UpdateSourceTrigger=PropertyChanged}"
+                      DisplayMemberPath="brand"/>
             <Grid>
-
                 <ComboBox Width="390" Height="42"
-                              Margin="0,0,0,5"
-                              HorizontalAlignment="Center"
-                              Grid.Column="1"
-                              BorderBrush="Transparent"
-                              FontSize="20"
-                              ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                              Foreground="Black" 
-                              ItemsSource="{Binding FixTypes}"
-                              SelectedItem="{Binding SelectedType, UpdateSourceTrigger=PropertyChanged}"
-                              DisplayMemberPath="TypeF"/>
+                          Margin="0,0,0,5"
+                          FontSize="20"
+                          HorizontalAlignment="Center"
+                          Grid.Column="1"
+                          BorderBrush="Transparent"
+                          ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                          Foreground="Black" 
+                          ItemsSource="{Binding FixTypes}"
+                          SelectedItem="{Binding SelectedType, UpdateSourceTrigger=PropertyChanged}"
+                          DisplayMemberPath="TypeF"/>
             </Grid>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal">
-
-            <TextBox x:Name="ddmmyyyy" Width="287"
+            <TextBox x:Name="dd_mm_yyyy" Width="287"
                      Height="40"
                      Margin="5,5,5,10"
                      Grid.Column="1"
-                     Style="{StaticResource CustomTextBoxWatermark}" 
-                     FontSize="20"
+                     Style="{StaticResource CustomTextBoxWatermark}"
                      Text="{Binding Data, UpdateSourceTrigger=PropertyChanged}"/>
-
             <TextBox x:Name="Mileage" Width="287"
                      Height="40"
                      Margin="5,5,5,10"
                      HorizontalAlignment="Center"
                      Grid.Column="1"
                      Style="{StaticResource CustomTextBoxWatermark}"
-                     FontSize="20"
                      Text="{Binding Mileage, UpdateSourceTrigger=PropertyChanged}"/>
-
             <TextBox x:Name="Price" Width="190"
                      Height="40"
                      Margin="5,5,5,10"
                      HorizontalAlignment="Center"
                      Grid.Column="1"
                      Style="{StaticResource CustomTextBoxWatermark}"
-                     FontSize="20"
                      Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}"/>
-
         </StackPanel>
 
         <StackPanel Orientation="Horizontal">
@@ -113,8 +100,7 @@
                      Margin="5,5,5,10"
                      HorizontalAlignment="Left"
                      Grid.Column="1"
-                     Style="{StaticResource DesctiptionTextBox}"
-                     FontSize="20"/>
+                     Style="{StaticResource DesctiptionTextBox}"/>
 
         <StackPanel Orientation="Horizontal">
             <Button BorderThickness="0"

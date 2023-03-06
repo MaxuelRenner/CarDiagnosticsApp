@@ -1,20 +1,17 @@
 ﻿using CarDiagnosticsApp.Core;
 using CarDiagnosticsApp.MVVM.Model;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarDiagnosticsApp.MVVM.ViewModel
 {
     class MotorsViewModel : BaseViewModel
     {
         private bool hideLbox;
+        private Vehicle selectedVehicle;
+
+        private ObservableCollection<Vehicle> motorsOnly;
         public Referencer CurrentRefrence { get; set; }
 
-        private Vehicle selectedVehicle;
         public Vehicle SelectedVehicle
         {
             get { return selectedVehicle; }
@@ -24,15 +21,11 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
                 OnPropertyChanged(nameof(SelectedVehicle));
             }
         }
-
-        private ObservableCollection<Vehicle> motorsOnly;
-
         public MotorsViewModel(Referencer referencer)
         {
             this.CurrentRefrence = referencer;
             this.MotorsOnly = DB_Connection.GetMotorsOnly();
         }
-
         public ObservableCollection<Vehicle> MotorsOnly
         {
             get { return motorsOnly; }
@@ -51,7 +44,6 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
                 CurrentRefrence.CurrentView = new VehicleViewModel(selectedVehicle, "MotorsViewModel", CurrentRefrence);
             }
         }
-
         public bool HideLBox
         {
             get { return hideLbox; }
@@ -61,7 +53,6 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
                 OnPropertyChanged(nameof(hideLbox));
             }
         }
-
         public void FixInfo()
         {
             HideLBox = true;

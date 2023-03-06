@@ -9,56 +9,55 @@
              d:DesignHeight="450" Width="580"
              Background="#FF332347">
     <Grid>
-
-        <Label Margin="40,28,468,408" FontSize="15" FontStyle="Oblique" Foreground="#FFA7A79E">Brand</Label>
+        <Label Margin="40,28,468,408" FontSize="15" FontStyle="Oblique" 
+               Foreground="#FFA7A79E">Brand</Label>
         <TextBox x:Name="Brand" Width="150"
-                     Height="40"
-                     Margin="40,38,0,372"
-                     HorizontalAlignment="Left"
-                     Style="{StaticResource CustomTextBoxWatermark}"
-                     Text="{Binding Brand , UpdateSourceTrigger=PropertyChanged}"
-                     FontSize="20"/>
+                 Height="40"
+                 Margin="40,38,0,372"
+                 HorizontalAlignment="Left"
+                 Style="{StaticResource CustomTextBoxWatermark}"
+                 Text="{Binding Brand , UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Margin="215,28,290,408" FontSize="15" FontStyle="Oblique" Foreground="#FFA7A79E">Model</Label>
+        <Label Margin="215,28,290,408" FontSize="15" FontStyle="Oblique" 
+               Foreground="#FFA7A79E">Model</Label>
         <TextBox x:Name="Model"
-                     Height="40"
-                     Margin="215,38,215,372"
-                     Style="{StaticResource CustomTextBoxWatermark}"
-                     Text="{Binding Model}"
-                     FontSize="20"/>
+                 Height="40"
+                 Margin="215,38,215,372"
+                 Style="{StaticResource CustomTextBoxWatermark}"
+                 Text="{Binding Model}"/>
 
-        <Label Margin="390,28,130,408" FontSize="15" FontStyle="Oblique" Foreground="#FFA7A79E">Fuel</Label>
+        <Label Margin="390,28,130,408" FontSize="15" FontStyle="Oblique" 
+               Foreground="#FFA7A79E">Fuel</Label>
         <TextBox x:Name="Fuel" Width="150"
-                     Height="40"
-                     Margin="390,38,40,372"
-                     Style="{StaticResource CustomTextBoxWatermark}"
-                     Text="{Binding Fuel}"
-                     FontSize="20"/>
+                 Height="40"
+                 Margin="390,38,40,372"
+                 Style="{StaticResource CustomTextBoxWatermark}"
+                 Text="{Binding Fuel}"/>
 
-        <Label Margin="40,118,450,320" FontSize="15" FontStyle="Oblique" Foreground="#FFA7A79E">Mileage</Label>
+        <Label Margin="40,118,450,320" FontSize="15" FontStyle="Oblique" 
+               Foreground="#FFA7A79E">Mileage</Label>
         <TextBox x:Name="Mileage" Width="150"
-                     Height="40"
-                     Margin="40,128,0,282"
-                     HorizontalAlignment="Left"
-                     Style="{StaticResource CustomTextBoxWatermark}"
-                     Text="{Binding Mileage}"
-                     FontSize="20"/>
+                 Height="40"
+                 Margin="40,128,0,282"
+                 HorizontalAlignment="Left"
+                 Style="{StaticResource CustomTextBoxWatermark}"
+                 Text="{Binding Mileage}"/>
 
-        <Label Margin="215,118,250,320" FontSize="15" FontStyle="Oblique" Foreground="#FFA7A79E">Generation</Label>
+        <Label Margin="215,118,250,320" FontSize="15" FontStyle="Oblique" 
+               Foreground="#FFA7A79E">Generation</Label>
         <TextBox x:Name="Generation"
-                     Height="40"
-                     Margin="215,128,215,282"
-                     Style="{StaticResource CustomTextBoxWatermark}"
-                     Text="{Binding Generation}"
-                     FontSize="20"/>
+                 Height="40"
+                 Margin="215,128,215,282"
+                 Style="{StaticResource CustomTextBoxWatermark}"
+                 Text="{Binding Generation}"/>
 
-        <Label Margin="390,118,112,320" FontSize="15" FontStyle="Oblique" Foreground="#FFA7A79E">License</Label>
+        <Label Margin="390,118,112,320" FontSize="15" FontStyle="Oblique" 
+               Foreground="#FFA7A79E">License</Label>
         <TextBox x:Name="Plate" Width="150"
-                     Height="40"
-                     Margin="390,128,40,282"
-                     Style="{StaticResource CustomTextBoxWatermark}"
-                     Text="{Binding Plate}"
-                     FontSize="20"/>
+                 Height="40"
+                 Margin="390,128,40,282"
+                 Style="{StaticResource CustomTextBoxWatermark}"
+                 Text="{Binding Plate}"/>
 
         <Button BorderThickness="0"
                 Height="30"

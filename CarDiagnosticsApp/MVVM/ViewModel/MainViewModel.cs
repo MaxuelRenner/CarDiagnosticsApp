@@ -51,7 +51,6 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
                 CurrentRefrence.CurrentView = FixesVm;
             });
         }
-
         public void OnCurrentViewChanged()
         {
             OnPropertyChanged(nameof(CurrentView));

@@ -107,7 +107,6 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
                 return vehicles;
             }
         }
-
         public ObservableCollection<FixTypes> FixTypes
         {
             get
@@ -131,7 +130,6 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
                 this.OnPropertyChanged(nameof(SelectedVehicle));
             }
         }
-
         public FixTypes SelectedType
         {
             get

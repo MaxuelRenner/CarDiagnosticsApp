@@ -12,30 +12,33 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
     class BusesViewModel : BaseViewModel
     {
         private bool hideLbox;
+        private Vehicle selectedVehicle;
+        private ObservableCollection<Vehicle> busesOnly;
         public Referencer CurrentRefrence { get; set; }
 
-        private Vehicle selectedVehicle;
         public Vehicle SelectedVehicle
         {
-            get { return selectedVehicle; }
+            get 
+            { 
+                return selectedVehicle; 
+            }
             set
             {
                 this.selectedVehicle = value;
                 OnPropertyChanged(nameof(SelectedVehicle));
             }
         }
-
-        private ObservableCollection<Vehicle> busesOnly;
-
         public BusesViewModel(Referencer referencer)
         {
             this.CurrentRefrence = referencer;
             this.BusesOnly = DB_Connection.GetBusesOnly();
         }
-
         public ObservableCollection<Vehicle> BusesOnly
         {
-            get { return busesOnly; }
+            get
+            { 
+                return busesOnly; 
+            }
             set
             {
                 busesOnly = value;
@@ -51,17 +54,18 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
                 CurrentRefrence.CurrentView = new VehicleViewModel(selectedVehicle, "BusesViewModel", CurrentRefrence);
             }
         }
-
         public bool HideLBox
         {
-            get { return hideLbox; }
+            get 
+            {
+                return hideLbox; 
+            }
             set
             {
                 hideLbox = value;
                 OnPropertyChanged(nameof(hideLbox));
             }
         }
-
         public void FixInfo()
         {
             HideLBox = true;

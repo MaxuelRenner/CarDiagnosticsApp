@@ -12,6 +12,7 @@
                                      Margin="1"
                                      Text="{Binding RelativeSource={RelativeSource TemplatedParent},Path=Text, Mode=TwoWay}"
                                      VerticalAlignment="Center"
+                                     FontSize="20"
                                      BorderThickness="0"
                                      Background="Transparent"
                                      Foreground="Black"/>
@@ -54,6 +55,7 @@
                                      TextWrapping="Wrap"
                                      AcceptsReturn="True"
                                      Padding="5"
+                                     FontSize="20"
                                      Foreground="#282538"
                                      VerticalScrollBarVisibility="Visible"
                                      x:Name="Description"/>

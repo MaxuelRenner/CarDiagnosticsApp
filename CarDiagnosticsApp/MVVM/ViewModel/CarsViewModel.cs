@@ -13,9 +13,9 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
     class CarsViewModel : BaseViewModel
     {
         private bool hideLbox;
-        public Referencer CurrentRefrence { get; set; }
-
         private Vehicle selectedVehicle;
+        private ObservableCollection<Vehicle> carsOnly;
+        public Referencer CurrentRefrence { get; set; }
         public Vehicle SelectedVehicle
         {
             get { return selectedVehicle; }
@@ -25,18 +25,17 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
                 OnPropertyChanged(nameof(SelectedVehicle));
             }
         }
-
-        private ObservableCollection<Vehicle> carsOnly;
-
         public CarsViewModel(Referencer referencer)
         {
             this.CurrentRefrence = referencer;
             this.CarsOnly = DB_Connection.GetCarsOnly();
         }
-
         public ObservableCollection<Vehicle> CarsOnly
         {
-            get { return carsOnly; }
+            get
+            { 
+                return carsOnly; 
+            }
             set
             {
                 carsOnly = value;
@@ -52,17 +51,18 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
                 CurrentRefrence.CurrentView = new VehicleViewModel(selectedVehicle, "CarsViewModel", CurrentRefrence);
             }
         }
-
         public bool HideLBox
         {
-            get { return hideLbox; }
+            get
+            { 
+                return hideLbox; 
+            }
             set
             {
                 hideLbox = value;
                 OnPropertyChanged(nameof(hideLbox));
             }
         }
-
         public void FixInfo()
         {
             HideLBox = true;

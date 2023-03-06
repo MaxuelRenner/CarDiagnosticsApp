@@ -7,7 +7,7 @@
              xmlns:viewModel="clr-namespace:CarDiagnosticsApp.MVVM.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    
+
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     </UserControl.Resources>
@@ -15,7 +15,7 @@
 
         <StackPanel Orientation="Horizontal"
                     Margin="0,0,0,10"/>
-      
+
         <StackPanel>
             <StackPanel.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -33,39 +33,35 @@
         <StackPanel Orientation="Horizontal">
 
             <ComboBox Width="350" Height="42"
-                              Margin="5,5,5,10"
-                              HorizontalAlignment="Center"
-                              Grid.Column="1"
-                              BorderBrush="Transparent"
-                              FontSize="20"
-                              ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                              Foreground="Black"
+                      Margin="5,5,5,10"
+                      HorizontalAlignment="Center"
+                      Grid.Column="1"
+                      BorderBrush="Transparent"
+                      FontSize="20"
+                      ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                      Foreground="Black"
                       ItemsSource="{Binding Types}"
                       DisplayMemberPath="TypeV"
                       SelectedItem="{Binding SelectedType,UpdateSourceTrigger=PropertyChanged}">
 
             </ComboBox>
-            
-                <TextBox x:Name="Brand" Width="210"
+
+            <TextBox x:Name="Brand" Width="210"
                      Height="40"
                      Margin="5,5,5,10"
                      HorizontalAlignment="Center"
                      Grid.Column="1"
                      Text="{Binding Brand, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
-                     Style="{StaticResource CustomTextBoxWatermark}"
-                     FontSize="20"
-                     />
+                     Style="{StaticResource CustomTextBoxWatermark}"/>
 
-                    <TextBox x:Name="Model" Width="205"
+            <TextBox x:Name="Model" Width="205"
                      Height="40"
                      Margin="5,5,5,10"
                      HorizontalAlignment="Center"
                      Grid.Column="1"
                      Style="{StaticResource CustomTextBoxWatermark}"
-                     FontSize="20"
-                     Text="{Binding Model, UpdateSourceTrigger=PropertyChanged}"
-                     />
-                
+                     Text="{Binding Model, UpdateSourceTrigger=PropertyChanged}"/>
+
         </StackPanel>
         <TextBox x:Name="Generation" Width="785"
                      Height="40"
@@ -73,20 +69,15 @@
                      Margin="5,5,5,10"
                      Grid.Column="1"
                      Style="{StaticResource CustomTextBoxWatermark}"
-                     FontSize="20"
-                     Text="{Binding Generation, UpdateSourceTrigger=PropertyChanged}"
-                     />
+                     Text="{Binding Generation, UpdateSourceTrigger=PropertyChanged}"/>
 
         <StackPanel Orientation="Horizontal">
-
             <TextBox x:Name="Fuel" Width="387"
                      Height="40"
                      Margin="5,5,5,10"
                      Grid.Column="1"
                      Style="{StaticResource CustomTextBoxWatermark}"
-                     FontSize="20"
-                     Text="{Binding Fuel, UpdateSourceTrigger=PropertyChanged}"
-                     />
+                     Text="{Binding Fuel, UpdateSourceTrigger=PropertyChanged}"/>
 
             <TextBox x:Name="Mileage" Width="387"
                      Height="40"
@@ -94,10 +85,7 @@
                      HorizontalAlignment="Center"
                      Grid.Column="1"
                      Style="{StaticResource CustomTextBoxWatermark}"
-                     FontSize="20"
-                     Text="{Binding Mileage, UpdateSourceTrigger=PropertyChanged}"
-                     />
-
+                     Text="{Binding Mileage, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
 
         <TextBox x:Name="Plate" Width="783"
@@ -106,9 +94,7 @@
                      HorizontalAlignment="Left"
                      Grid.Column="1"
                      Style="{StaticResource CustomTextBoxWatermark}"
-                     FontSize="20"
-                     Text="{Binding Plate, UpdateSourceTrigger=PropertyChanged}"
-                     />
+                     Text="{Binding Plate, UpdateSourceTrigger=PropertyChanged}"/>
 
         <StackPanel Orientation="Horizontal">
             <Button BorderThickness="0" 
@@ -160,6 +146,5 @@
                 </Button.Template>
             </Button>
         </StackPanel>
-
     </StackPanel>
 </UserControl>
