@@ -14,7 +14,7 @@
         MouseDown="Window_MouseDown"
         Background="Transparent"
         AllowsTransparency="True">
-    
+
     <Border Background="#30415d"
             CornerRadius="15">
         <Grid>
@@ -22,7 +22,6 @@
                 <RowDefinition Height="75"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
@@ -86,7 +85,6 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-
 
             <Button BorderThickness="0" Content="_" Cursor="Hand" Grid.Column="1" Margin="735,10,45,35" Opacity="0.995" Click="Button_Click">
                 <Button.Style>
