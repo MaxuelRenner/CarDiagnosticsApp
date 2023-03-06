@@ -115,8 +115,6 @@
     <Compile Include="MVVM\View\VehicleView.xaml.cs">
       <DependentUpon>VehicleView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Theme\BaseAttachProperty.cs" />
-    <Compile Include="Theme\BaseValueConverter.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

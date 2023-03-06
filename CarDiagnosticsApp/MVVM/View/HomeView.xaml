@@ -46,7 +46,7 @@
 
             </ComboBox>
 
-            <TextBox x:Name="Brand" Width="210"
+            <TextBox Tag="Brand" Width="210"
                      Height="40"
                      Margin="5,5,5,10"
                      HorizontalAlignment="Center"
@@ -54,7 +54,7 @@
                      Text="{Binding Brand, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                      Style="{StaticResource CustomTextBoxWatermark}"/>
 
-            <TextBox x:Name="Model" Width="205"
+            <TextBox Tag="Model" Width="205"
                      Height="40"
                      Margin="5,5,5,10"
                      HorizontalAlignment="Center"
@@ -63,23 +63,23 @@
                      Text="{Binding Model, UpdateSourceTrigger=PropertyChanged}"/>
 
         </StackPanel>
-        <TextBox x:Name="Generation" Width="785"
-                     Height="40"
-                     HorizontalAlignment="Left"
-                     Margin="5,5,5,10"
-                     Grid.Column="1"
-                     Style="{StaticResource CustomTextBoxWatermark}"
-                     Text="{Binding Generation, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Tag="Generation" Width="785"
+            Height="40"
+            HorizontalAlignment="Left"
+            Margin="5,5,5,10"
+            Grid.Column="1"
+            Style="{StaticResource CustomTextBoxWatermark}"
+            Text="{Binding Generation, UpdateSourceTrigger=PropertyChanged}"/>
 
         <StackPanel Orientation="Horizontal">
-            <TextBox x:Name="Fuel" Width="387"
+            <TextBox Tag="Fuel" Width="387"
                      Height="40"
                      Margin="5,5,5,10"
                      Grid.Column="1"
                      Style="{StaticResource CustomTextBoxWatermark}"
                      Text="{Binding Fuel, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <TextBox x:Name="Mileage" Width="387"
+            <TextBox Tag="Mileage" Width="387"
                      Height="40"
                      Margin="5,5,5,10"
                      HorizontalAlignment="Center"
@@ -88,13 +88,13 @@
                      Text="{Binding Mileage, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
 
-        <TextBox x:Name="Plate" Width="783"
-                     Height="40"
-                     Margin="5,5,5,10"
-                     HorizontalAlignment="Left"
-                     Grid.Column="1"
-                     Style="{StaticResource CustomTextBoxWatermark}"
-                     Text="{Binding Plate, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Tag="Plate" Width="783"
+            Height="40"
+            Margin="5,5,5,10"
+            HorizontalAlignment="Left"
+            Grid.Column="1"
+            Style="{StaticResource CustomTextBoxWatermark}"
+            Text="{Binding Plate, UpdateSourceTrigger=PropertyChanged}"/>
 
         <StackPanel Orientation="Horizontal">
             <Button BorderThickness="0" 

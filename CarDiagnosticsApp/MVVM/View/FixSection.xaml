@@ -52,20 +52,22 @@
         </StackPanel>
 
         <StackPanel Orientation="Horizontal">
-            <TextBox x:Name="dd_mm_yyyy" Width="287"
+            <TextBox Tag="dd-mm-yyyy" Width="287"
                      Height="40"
                      Margin="5,5,5,10"
                      Grid.Column="1"
                      Style="{StaticResource CustomTextBoxWatermark}"
                      Text="{Binding Data, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox x:Name="Mileage" Width="287"
+            
+            <TextBox Tag="Mileage" Width="287"
                      Height="40"
                      Margin="5,5,5,10"
                      HorizontalAlignment="Center"
                      Grid.Column="1"
                      Style="{StaticResource CustomTextBoxWatermark}"
                      Text="{Binding Mileage, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox x:Name="Price" Width="190"
+            
+            <TextBox Tag="Price" Width="190"
                      Height="40"
                      Margin="5,5,5,10"
                      HorizontalAlignment="Center"
@@ -76,7 +78,7 @@
 
         <StackPanel Orientation="Horizontal">
 
-            <TextBox x:Name="name_of_fixer" Width="287"
+            <TextBox Tag="Mechanic's name" Width="287"
                      Height="40"
                      Margin="5,5,5,10"
                      Grid.Column="1"
@@ -84,7 +86,7 @@
                      FontSize="20"
                      Text="{Binding Machenicsname, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <TextBox x:Name="service_name_N_address" Width="487"
+            <TextBox Tag="Service name and address" Width="487"
                      Height="40"
                      Margin="5,5,5,10"
                      HorizontalAlignment="Center"

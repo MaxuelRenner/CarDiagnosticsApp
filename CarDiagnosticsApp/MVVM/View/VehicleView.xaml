@@ -11,7 +11,7 @@
     <Grid>
         <Label Margin="40,28,468,408" FontSize="15" FontStyle="Oblique" 
                Foreground="#FFA7A79E">Brand</Label>
-        <TextBox x:Name="Brand" Width="150"
+        <TextBox Tag="Brand" Width="150"
                  Height="40"
                  Margin="40,38,0,372"
                  HorizontalAlignment="Left"
@@ -20,7 +20,7 @@
 
         <Label Margin="215,28,290,408" FontSize="15" FontStyle="Oblique" 
                Foreground="#FFA7A79E">Model</Label>
-        <TextBox x:Name="Model"
+        <TextBox Tag="Model"
                  Height="40"
                  Margin="215,38,215,372"
                  Style="{StaticResource CustomTextBoxWatermark}"
@@ -28,7 +28,7 @@
 
         <Label Margin="390,28,130,408" FontSize="15" FontStyle="Oblique" 
                Foreground="#FFA7A79E">Fuel</Label>
-        <TextBox x:Name="Fuel" Width="150"
+        <TextBox Tag="Fuel" Width="150"
                  Height="40"
                  Margin="390,38,40,372"
                  Style="{StaticResource CustomTextBoxWatermark}"
@@ -36,7 +36,7 @@
 
         <Label Margin="40,118,450,320" FontSize="15" FontStyle="Oblique" 
                Foreground="#FFA7A79E">Mileage</Label>
-        <TextBox x:Name="Mileage" Width="150"
+        <TextBox Tag="Mileage" Width="150"
                  Height="40"
                  Margin="40,128,0,282"
                  HorizontalAlignment="Left"
@@ -45,7 +45,7 @@
 
         <Label Margin="215,118,250,320" FontSize="15" FontStyle="Oblique" 
                Foreground="#FFA7A79E">Generation</Label>
-        <TextBox x:Name="Generation"
+        <TextBox Tag="Generation"
                  Height="40"
                  Margin="215,128,215,282"
                  Style="{StaticResource CustomTextBoxWatermark}"
@@ -53,7 +53,7 @@
 
         <Label Margin="390,118,112,320" FontSize="15" FontStyle="Oblique" 
                Foreground="#FFA7A79E">License</Label>
-        <TextBox x:Name="Plate" Width="150"
+        <TextBox Tag="Plate" Width="150"
                  Height="40"
                  Margin="390,128,40,282"
                  Style="{StaticResource CustomTextBoxWatermark}"

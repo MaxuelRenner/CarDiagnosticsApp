@@ -16,8 +16,8 @@
                                      BorderThickness="0"
                                      Background="Transparent"
                                      Foreground="Black"/>
-                            
-                            <TextBlock IsHitTestVisible="False" Text="{TemplateBinding Name}" VerticalAlignment="Center" 
+
+                            <TextBlock IsHitTestVisible="False" Text="{Binding RelativeSource={RelativeSource TemplatedParent},Path=Tag}" VerticalAlignment="Center" 
                                        HorizontalAlignment="Left" Margin="3,0,0,0" FontSize="15" Foreground="DarkSlateGray">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
