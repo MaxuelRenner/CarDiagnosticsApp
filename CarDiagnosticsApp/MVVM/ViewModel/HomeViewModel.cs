@@ -164,16 +164,14 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
         }
         public bool CanAdd(object args)
         {
-            if (Selected == null)
+            if (!String.IsNullOrEmpty(Brand) && !String.IsNullOrEmpty(Model) && !String.IsNullOrEmpty(Generation) && !String.IsNullOrEmpty(Fuel) && !String.IsNullOrEmpty(Mileage) && !String.IsNullOrEmpty(Plate))
             {
-                return false;
+                return true;
             }
-            return true;
+            return false;
         }
         private void Add(object obj)
         {
-            if (!String.IsNullOrEmpty(Brand) && !String.IsNullOrEmpty(Model) && !String.IsNullOrEmpty(Generation) && !String.IsNullOrEmpty(Fuel) && !String.IsNullOrEmpty(Mileage) && !String.IsNullOrEmpty(Plate))
-            {
                 DB_Connection.Insert(new Vehicle(this.selectedType.ID, this.brand, this.model, this.generation, this.fuel, this.mileage, this.plate));
                 this.Brand = null;
                 this.Model = null;
@@ -181,7 +179,6 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
                 this.Fuel = null;
                 this.Mileage = null;
                 this.Plate = null;
-            }
         }
     }
 }

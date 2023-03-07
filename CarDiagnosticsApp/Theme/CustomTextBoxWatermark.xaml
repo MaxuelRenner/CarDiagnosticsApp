@@ -10,7 +10,7 @@
                         <Grid>
                             <TextBox x:Name="TempTextBox"
                                      Margin="1"
-                                     Text="{Binding RelativeSource={RelativeSource TemplatedParent},Path=Text, Mode=TwoWay}"
+                                     Text="{Binding RelativeSource={RelativeSource TemplatedParent},Path=Text,UpdateSourceTrigger=PropertyChanged}"
                                      VerticalAlignment="Center"
                                      FontSize="20"
                                      BorderThickness="0"
