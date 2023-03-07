@@ -8,6 +8,7 @@
                     <Border CornerRadius="10" Width="{TemplateBinding Width}"
                             Background="#8b8c9e" Height="{TemplateBinding Height}">
                         <Grid>
+                            <Label HorizontalAlignment="Right" Foreground="#cf1922" FontSize="16" Padding="0,0,5,0">*</Label>
                             <TextBox x:Name="TempTextBox"
                                      Margin="1"
                                      Text="{Binding RelativeSource={RelativeSource TemplatedParent},Path=Text,UpdateSourceTrigger=PropertyChanged}"
@@ -47,6 +48,8 @@
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border CornerRadius="10" Background="#8b8c9e">
                         <Grid>
+                            <Label HorizontalAlignment="Right" Foreground="#cf1922" FontSize="16" Padding="0,0,10,0" Margin="0,0,10,0">*</Label>
+
                             <Rectangle StrokeThickness="1"/>
                             <TextBox BorderThickness="0"
                                      Background="Transparent"

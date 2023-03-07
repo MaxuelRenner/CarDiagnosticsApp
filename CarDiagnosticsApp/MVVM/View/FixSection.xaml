@@ -83,7 +83,6 @@
                      Margin="5,5,5,10"
                      Grid.Column="1"
                      Style="{StaticResource CustomTextBoxWatermark}"
-                     FontSize="20"
                      Text="{Binding Machenicsname, UpdateSourceTrigger=PropertyChanged}"/>
 
             <TextBox Tag="Service name and address" Width="487"
@@ -92,7 +91,6 @@
                      HorizontalAlignment="Center"
                      Grid.Column="1"
                      Style="{StaticResource CustomTextBoxWatermark}"
-                     FontSize="20"
                      Text="{Binding Service, UpdateSourceTrigger=PropertyChanged}"/>
 
         </StackPanel>
