@@ -83,7 +83,7 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
         }
         private void DeleteVehicle(object obj)
         {
-            DB_Connection.DeleteVehicle(SelectedVehicle.brand);
+            DB_Connection.DeleteVehicle(SelectedVehicle.id);
             ToBack();
         }
         private void ToBack()

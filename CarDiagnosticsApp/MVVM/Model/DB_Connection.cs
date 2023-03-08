@@ -274,15 +274,16 @@ namespace CarDiagnosticsApp.MVVM.Model
             }
             return vehicles;
         }
-        public static void DeleteVehicle(string brand)
+        public static void DeleteVehicle(int id)
         {
             using (SqlConnection connection = new SqlConnection(conectionstring))
             {
                 connection.Open();
-                string query = "SET ROWCOUNT 1 DELETE FROM [AddVehicle-1] WHERE brand = @brand SET ROWCOUNT 0";
+                string query = "DELETE FROM [FixSections-3] WHERE selectedCarID = @id" +
+                    " DELETE FROM [AddVehicle-1] WHERE id = @ID";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@Brand", brand);
+                    command.Parameters.AddWithValue("@ID", id);
                     command.ExecuteNonQuery();
                 }
             }
