@@ -149,11 +149,18 @@ namespace CarDiagnosticsApp.MVVM.ViewModel
             get
             {
 
-                this.addFixCommand = new RelayCommand(Add);
+                this.addFixCommand = new RelayCommand(Add, CanAdd);
                 return this.addFixCommand;
             }
         }
-
+        public bool CanAdd(object args)
+        {
+            if (!String.IsNullOrEmpty(Data) && !String.IsNullOrEmpty(Mileage) && !String.IsNullOrEmpty(Price) && !String.IsNullOrEmpty(Machenicsname) && !String.IsNullOrEmpty(Service) && !String.IsNullOrEmpty(Desc))
+            {
+                return true;
+            }
+            return false;
+        }
         private void Add(object obj)
         {
             DB_Connection.AddFix(new NewFixes(this.selectedType.ID, this.selectedVehicle.id, this.data, this.mileage, this.price, this.machenicsname, this.service, this.desc));

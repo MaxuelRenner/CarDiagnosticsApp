@@ -55,21 +55,24 @@
             <TextBox Tag="dd-mm-yyyy" Width="287"
                      Height="40"
                      Margin="5,5,5,10"
+                     MaxLength="10"
                      Grid.Column="1"
                      Style="{StaticResource CustomTextBoxWatermark}"
                      Text="{Binding Data, UpdateSourceTrigger=PropertyChanged}"/>
-            
+
             <TextBox Tag="Mileage" Width="287"
                      Height="40"
                      Margin="5,5,5,10"
+                     MaxLength="6"
                      HorizontalAlignment="Center"
                      Grid.Column="1"
                      Style="{StaticResource CustomTextBoxWatermark}"
                      Text="{Binding Mileage, UpdateSourceTrigger=PropertyChanged}"/>
-            
+
             <TextBox Tag="Price" Width="190"
                      Height="40"
                      Margin="5,5,5,10"
+                     MaxLength="10"
                      HorizontalAlignment="Center"
                      Grid.Column="1"
                      Style="{StaticResource CustomTextBoxWatermark}"
@@ -81,6 +84,7 @@
             <TextBox Tag="Mechanic's name" Width="287"
                      Height="40"
                      Margin="5,5,5,10"
+                     MaxLength="40"
                      Grid.Column="1"
                      Style="{StaticResource CustomTextBoxWatermark}"
                      Text="{Binding Machenicsname, UpdateSourceTrigger=PropertyChanged}"/>
@@ -88,6 +92,7 @@
             <TextBox Tag="Service name and address" Width="487"
                      Height="40"
                      Margin="5,5,5,10"
+                     MaxLength="100"
                      HorizontalAlignment="Center"
                      Grid.Column="1"
                      Style="{StaticResource CustomTextBoxWatermark}"
@@ -98,6 +103,7 @@
         <TextBox x:Name="Description" Width="785"
                      Height="140"
                      Margin="5,5,5,10"
+                     MaxLength="500"
                      HorizontalAlignment="Left"
                      Grid.Column="1"
                      Style="{StaticResource DesctiptionTextBox}"/>

@@ -14,6 +14,7 @@
         <TextBox Tag="Brand" Width="150"
                  Height="40"
                  Margin="40,38,0,372"
+                 MaxLength="30"
                  HorizontalAlignment="Left"
                  Style="{StaticResource CustomTextBoxWatermark}"
                  Text="{Binding Brand , UpdateSourceTrigger=PropertyChanged}"/>
@@ -23,6 +24,7 @@
         <TextBox Tag="Model"
                  Height="40"
                  Margin="215,38,215,372"
+                 MaxLength="30"
                  Style="{StaticResource CustomTextBoxWatermark}"
                  Text="{Binding Model}"/>
 
@@ -31,6 +33,7 @@
         <TextBox Tag="Fuel" Width="150"
                  Height="40"
                  Margin="390,38,40,372"
+                 MaxLength="70"
                  Style="{StaticResource CustomTextBoxWatermark}"
                  Text="{Binding Fuel}"/>
 
@@ -39,6 +42,7 @@
         <TextBox Tag="Mileage" Width="150"
                  Height="40"
                  Margin="40,128,0,282"
+                 MaxLength="6"
                  HorizontalAlignment="Left"
                  Style="{StaticResource CustomTextBoxWatermark}"
                  Text="{Binding Mileage}"/>
@@ -48,6 +52,7 @@
         <TextBox Tag="Generation"
                  Height="40"
                  Margin="215,128,215,282"
+                 MaxLength="20"
                  Style="{StaticResource CustomTextBoxWatermark}"
                  Text="{Binding Generation}"/>
 
@@ -56,6 +61,7 @@
         <TextBox Tag="Plate" Width="150"
                  Height="40"
                  Margin="390,128,40,282"
+                 MaxLength="8"
                  Style="{StaticResource CustomTextBoxWatermark}"
                  Text="{Binding Plate}"/>
 

@@ -14,6 +14,7 @@
                                      Text="{Binding RelativeSource={RelativeSource TemplatedParent},Path=Text,UpdateSourceTrigger=PropertyChanged}"
                                      VerticalAlignment="Center"
                                      FontSize="20"
+                                     MaxLength="{TemplateBinding MaxLength}"
                                      BorderThickness="0"
                                      Background="Transparent"
                                      Foreground="Black"/>
@@ -59,6 +60,7 @@
                                      AcceptsReturn="True"
                                      Padding="5"
                                      FontSize="20"
+                                     MaxLength="500"
                                      Foreground="#282538"
                                      VerticalScrollBarVisibility="Visible"
                                      x:Name="Description"/>
