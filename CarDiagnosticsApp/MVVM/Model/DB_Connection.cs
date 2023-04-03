@@ -16,7 +16,7 @@ namespace CarDiagnosticsApp.MVVM.Model
         {
             ObservableCollection<Vehicle> vehicles = new ObservableCollection<Vehicle>();
             Vehicle vehicle = null;
-            string queryString = "Select * from [AddVehicle-1] where TypeID =(select ID from [VehicleType-2] Where Type = @type )";
+            string queryString = "Select * from [AddVehicle-1] where TypeID =(select ID from [VehicleType-2] Where Type = @type)";
             using (SqlConnection connection = new SqlConnection(conectionstring))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);

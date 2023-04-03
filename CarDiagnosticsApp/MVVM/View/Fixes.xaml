@@ -13,7 +13,8 @@
         <TextBlock Text="Choose a vehicle to see all of its fixes!"
                        Foreground="White"
                        FontSize="20"
-                       Margin="10,0,442,415"/>
+                       Margin="10,0,405,415"
+                       FontFamily="/Fonts/#Poppins"/>
         
         <ComboBox
             Margin="5,30,515,432"
