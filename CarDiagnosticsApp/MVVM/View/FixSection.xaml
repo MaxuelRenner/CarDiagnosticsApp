@@ -18,7 +18,7 @@
                     <Setter Property="Margin" Value="15,0,0,0"/>
                 </Style>
             </StackPanel.Resources>
-            <TextBlock Text="What new did you fixed!"
+            <TextBlock Text="What new did you fixed?"
                        Foreground="White"
                        FontSize="20"
                        HorizontalAlignment="Left"
