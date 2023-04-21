@@ -543,3 +543,6 @@ Menu:
 https://www.youtube.com/watch?v=PzP8mw7JUzI
 
 https://www.youtube.com/watch?v=5AsJJl7Bhvc
+ 
+Базово приеложение от, което е взимано пример:
+https://car-diary.bg/en
